@@ -1,0 +1,13 @@
+{
+  "start": "lobby",
+  "scenes": {
+    "lobby": {
+      "title": "Lobby Entrance",
+      "path": "scenes/lobby"
+    },
+    "hall": {
+      "title": "Main Hallway",
+      "path": "scenes/hall"
+    }
+  }
+}

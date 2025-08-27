@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depth Tour - Three.js Panorama with DIBR</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Main WebGL canvas will be injected here -->
+    <div id="container"></div>
+    
+    <!-- CSS2D overlay for hotspots -->
+    <div id="css2d-container"></div>
+    
+    <!-- HUD for debug info -->
+    <div id="hud">
+        <div id="scene-name">Scene: Loading...</div>
+        <div id="depth-scale">Depth Scale: 3.0</div>
+        <div id="authoring-status"></div>
+    </div>
+    
+    <!-- Info popup for hotspots -->
+    <div id="info-popup" class="hidden">
+        <div id="info-content"></div>
+        <button id="info-close">Close</button>
+    </div>
+    
+    <!-- Loading overlay -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading panorama...</div>
+    </div>
+    
+    <!-- Instructions overlay -->
+    <div id="instructions" class="instructions">
+        <h3>Controls:</h3>
+        <ul>
+            <li><strong>Mouse:</strong> Look around</li>
+            <li><strong>A:</strong> Toggle authoring mode</li>
+            <li><strong>D:</strong> Toggle depth debug view</li>
+            <li><strong>F:</strong> Flip depth direction</li>
+            <li><strong>K/L:</strong> Decrease/Increase depth scale</li>
+            <li><strong>O/P:</strong> Decrease/Increase exposure</li>
+            <li><strong>E:</strong> Export hotspots (authoring mode)</li>
+            <li><strong>ESC:</strong> Hide this help</li>
+        </ul>
+        <button id="instructions-close">Got it!</button>
+    </div>
+    
+    <script type="module" src="depthTour.js"></script>
+</body>
+</html>

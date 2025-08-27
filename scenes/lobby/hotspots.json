@@ -1,0 +1,20 @@
+[
+  {
+    "id": "to-hall",
+    "title": "Go to Hallway",
+    "type": "link",
+    "target": "hall",
+    "uv": [0.75, 0.5],
+    "d": 0.6,
+    "position": [0.8, 0.0, 0.6]
+  },
+  {
+    "id": "info-lobby",
+    "title": "Lobby Information",
+    "type": "info",
+    "content": "Welcome to the main lobby. This is the entrance area where visitors first arrive.",
+    "uv": [0.25, 0.4],
+    "d": 0.8,
+    "position": [-0.7, -0.2, 0.7]
+  }
+]

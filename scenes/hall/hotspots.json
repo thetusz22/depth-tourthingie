@@ -1,0 +1,20 @@
+[
+  {
+    "id": "to-lobby",
+    "title": "Back to Lobby",
+    "type": "link",
+    "target": "lobby",
+    "uv": [0.25, 0.5],
+    "d": 0.7,
+    "position": [-0.6, 0.0, 0.8]
+  },
+  {
+    "id": "info-hall",
+    "title": "Hallway Details",
+    "type": "info", 
+    "content": "This hallway connects various rooms in the building. Notice the architectural details and lighting.",
+    "uv": [0.5, 0.3],
+    "d": 0.9,
+    "position": [0.0, -0.4, 0.9]
+  }
+]

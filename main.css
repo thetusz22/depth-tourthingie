@@ -1,0 +1,331 @@
+/* Main layout and container styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#css2d-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* HUD styles */
+#hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 200;
+    backdrop-filter: blur(10px);
+}
+
+#hud div {
+    margin-bottom: 5px;
+}
+
+#hud div:last-child {
+    margin-bottom: 0;
+}
+
+#authoring-status {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+/* Hotkeys display in bottom right */
+#hotkeys-display {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    line-height: 1.4;
+    z-index: 200;
+    backdrop-filter: blur(10px);
+    max-width: 200px;
+}
+
+.hotkeys-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0096ff;
+    font-size: 13px;
+}
+
+.hotkey-item {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.key {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    min-width: 24px;
+    text-align: center;
+    margin-right: 8px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hotspot styles */
+.hotspot {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    transform: translate(-50%, -50%);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.hotspot:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hotspot.link {
+    background: rgba(0, 150, 255, 0.9);
+    color: white;
+    border-color: #0096ff;
+}
+
+.hotspot.link:hover {
+    background: rgba(0, 150, 255, 1);
+}
+
+.hotspot.info {
+    background: rgba(255, 165, 0, 0.9);
+    color: white;
+    border-color: #ffa500;
+}
+
+.hotspot.info:hover {
+    background: rgba(255, 165, 0, 1);
+}
+
+/* Info popup styles */
+#info-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 400px;
+    z-index: 300;
+    backdrop-filter: blur(15px);
+}
+
+#info-popup.hidden {
+    display: none;
+}
+
+#info-content {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#info-close {
+    background: #0096ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+#info-close:hover {
+    background: #0080e6;
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 400;
+    backdrop-filter: blur(5px);
+}
+
+.loading-overlay.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #0096ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+.loading-text {
+    font-size: 16px;
+    color: #ccc;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Instructions overlay */
+.instructions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 500px;
+    z-index: 350;
+    backdrop-filter: blur(15px);
+}
+
+.instructions.hidden {
+    display: none;
+}
+
+.instructions h3 {
+    margin: 0 0 20px 0;
+    color: #0096ff;
+    font-size: 18px;
+}
+
+.instructions ul {
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.instructions strong {
+    color: #0096ff;
+}
+
+#instructions-close {
+    background: #0096ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+#instructions-close:hover {
+    background: #0080e6;
+}
+
+/* Scene transition effects */
+.scene-transition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 250;
+    pointer-events: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #hud {
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .hotspot {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+    
+    .instructions,
+    #info-popup {
+        margin: 20px;
+        max-width: calc(100vw - 40px);
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+    }
+}

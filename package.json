@@ -1,0 +1,29 @@
+{
+  "name": "depth-tour",
+  "version": "1.0.0",
+  "description": "Three.js panorama viewer with depth-based parallax and interactive hotspots",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview",
+    "serve": "npx http-server . -p 8080 -o"
+  },
+  "keywords": [
+    "threejs",
+    "panorama",
+    "depth",
+    "parallax",
+    "webgl",
+    "virtual-tour"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "three": "^0.179.1"
+  }
+}
